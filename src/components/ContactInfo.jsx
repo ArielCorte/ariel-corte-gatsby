@@ -2,17 +2,17 @@ import React from "react"
 import styled from "styled-components"
 import BtnSqr from "./BtnSqr.jsx"
 import BtnRnd from "./BtnRnd.jsx"
-import { BsGithub, BsTwitter } from "react-icons/bs"
+import { BsGithub, BsLinkedin } from "react-icons/bs"
 
 const ContactInfo = () => {
   return (
     <Wrapper>
-      <BtnSqr href="youtube.com">Resume</BtnSqr>
-      <BtnRnd href="github.com">
+      <BtnSqr href="#">Resume</BtnSqr>
+      <BtnRnd href="https://github.com/ArielCorte">
         <BsGithub />
       </BtnRnd>
-      <BtnRnd href="twitter.com">
-        <BsTwitter />
+      <BtnRnd href="https://www.linkedin.com/in/arielcorte">
+        <BsLinkedin />
       </BtnRnd>
     </Wrapper>
   )
