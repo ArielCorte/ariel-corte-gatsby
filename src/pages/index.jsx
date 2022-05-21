@@ -3,18 +3,19 @@ import Layout from "../components/Layout.jsx"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import ContactInfo from "../components/ContactInfo.jsx"
+import CardCarrousel from "../components/CardCarrousel.jsx"
 
 export default function Home() {
   return (
     <>
       <Layout>
         <Wrapper>
-          <div className="hero">
+          <section className="hero">
             <div className="hero-flex">
               <div className="hero-content">
                 <p>Hi my name is</p>
                 <h1>Ariel Corte.</h1>
-                <h2>I build things for the web</h2>
+                <h2 className="subtitle">I build things for the web</h2>
                 <p className="description">
                   A passionate web app developer. I tend to make use of modern
                   web technologies to build websites that looks great, feels
@@ -29,7 +30,11 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
+          </section>
+          <section id="projects">
+            <h2 className="section-title">Projects</h2>
+            <CardCarrousel />
+          </section>
         </Wrapper>
       </Layout>
     </>
@@ -38,27 +43,18 @@ export default function Home() {
 
 const Wrapper = styled.main`
   .hero {
-    height: 100vh;
     padding: 4rem 0;
   }
 
   .hero-flex {
-    width: 80%;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
   }
 
-  h1 {
-    font-size: 5rem;
-    font-weight: 200;
-    color: var(--primary-dark);
-  }
-
-  h2 {
-    font-size: 3rem;
-    font-weight: 200;
+  .subtitle {
+    color: var(--secondary-dark);
   }
 
   .hero-content {
@@ -77,5 +73,9 @@ const Wrapper = styled.main`
 
   .hero-img img {
     width: 100%;
+  }
+
+  .section-title {
+    text-align: center;
   }
 `
