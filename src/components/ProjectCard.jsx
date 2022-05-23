@@ -6,8 +6,6 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs"
 import { IconContext } from "react-icons"
 
 const ProjectCard = ({ title, repo, demo, thumbnail }) => {
-  console.log(thumbnail)
-
   return (
     <Card>
       <div className="content">
@@ -26,14 +24,14 @@ const ProjectCard = ({ title, repo, demo, thumbnail }) => {
       </div>
       <div className="footer">
         {repo ? (
-          <a href={repo} target="_blank">
+          <a href={repo} target="_blank" rel="noreferrer">
             <IconContext.Provider value={{ size: "1.5rem" }}>
               <FaGithub />
             </IconContext.Provider>
           </a>
         ) : null}
         {demo ? (
-          <a href={demo} target="_blank">
+          <a href={demo} target="_blank" rel="noreferrer">
             Demo
             <IconContext.Provider value={{ size: "1.5rem" }}>
               <BsFillArrowRightCircleFill />
@@ -83,6 +81,10 @@ const Card = styled.div`
 
   .footer a {
     display: flex;
+  }
+
+  .footer a:hover {
+    color: var(--highlight-color);
   }
 
   .footer svg {

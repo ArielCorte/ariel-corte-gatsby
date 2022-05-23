@@ -4,13 +4,14 @@ import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import ContactInfo from "../components/ContactInfo.jsx"
 import CardCarrousel from "../components/CardCarrousel.jsx"
+import Contact from "../components/Contact.jsx"
 
 export default function Home() {
   return (
     <>
       <Layout>
         <Wrapper>
-          <section className="hero">
+          <section id="hero" className="hero">
             <div className="hero-flex">
               <div className="hero-content">
                 <p>Hi my name is</p>
@@ -34,6 +35,10 @@ export default function Home() {
           <section id="projects">
             <h2 className="section-title">Projects</h2>
             <CardCarrousel />
+          </section>
+          <section id="contact">
+            <h2 className="section-title">Contact Me</h2>
+            <Contact />
           </section>
         </Wrapper>
       </Layout>
@@ -66,7 +71,7 @@ const Wrapper = styled.main`
   }
 
   .hero-img {
-    width: 25%;
+    width: 28%;
     border-radius: 1rem;
     overflow: hidden;
   }

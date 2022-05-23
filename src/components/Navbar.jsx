@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import BtnSqr from "./BtnSqr"
 
 const Navbar = () => {
   return (
@@ -11,25 +12,15 @@ const Navbar = () => {
         </Link>
         <ul>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">Tech</Link>
           </li>
           <li>
-            <Link to="/experience">Experience</Link>
+            <a href="#projects">Projects</a>
           </li>
           <li>
-            <Link to="/education">Education</Link>
-          </li>
-          <li>
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li>
-            <Link to="/achievements">Achievements</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/blog">Blog</Link>
+            <BtnSqr href="#contact" color="--highlight-color">
+              Contact Me
+            </BtnSqr>
           </li>
         </ul>
       </div>

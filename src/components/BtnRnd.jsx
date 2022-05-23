@@ -1,8 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 
-const BtnRnd = ({ href, children }) => {
-  return <Button href={href}>{children}</Button>
+const BtnRnd = ({ href, target, children }) => {
+  return (
+    <Button href={href} target={target}>
+      {children}
+    </Button>
+  )
 }
 
 const Button = styled.a`

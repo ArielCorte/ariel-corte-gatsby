@@ -8,10 +8,10 @@ const ContactInfo = () => {
   return (
     <Wrapper>
       <BtnSqr href="#">Resume</BtnSqr>
-      <BtnRnd href="https://github.com/ArielCorte">
+      <BtnRnd href="https://github.com/ArielCorte" target="_blank">
         <BsGithub />
       </BtnRnd>
-      <BtnRnd href="https://www.linkedin.com/in/arielcorte">
+      <BtnRnd href="https://www.linkedin.com/in/arielcorte" target="_blank">
         <BsLinkedin />
       </BtnRnd>
     </Wrapper>
