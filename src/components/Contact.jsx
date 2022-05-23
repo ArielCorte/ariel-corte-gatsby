@@ -23,12 +23,16 @@ const Contact = () => {
 
   return (
     <EmailForm lineBreaks={lineBreaks} maxHeight={maxHeight}>
-      <form className="emailform">
+      <form
+        className="emailform"
+        action="https://formsubmit.co/cortearielformal@gmail.com"
+        method="POST"
+      >
         <div className="textinput-container">
           <input
             className="textinput"
             type="email"
-            name=""
+            name="email"
             id=""
             placeholder="Your Email"
           />
@@ -37,19 +41,26 @@ const Contact = () => {
           <input
             className="textinput"
             type="text"
-            name=""
+            name="_subject"
             id=""
             placeholder="Subject"
           />
         </div>
         <textarea
-          name=""
+          name="message"
           id=""
           cols="30"
           rows="10"
           placeholder="Message"
           onChange={handleChange}
         ></textarea>
+        <input
+          type="hidden"
+          name="_next"
+          value="https://arielcorte.vercel.app/#contact"
+        />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" className="honey" />
         <input className="submitinput" type="submit" value="Send" />
       </form>
     </EmailForm>
@@ -125,6 +136,10 @@ const EmailForm = styled.div`
   .submitinput:hover {
     background-color: var(--highlight-color);
     cursor: pointer;
+  }
+
+  .honey {
+    display: none;
   }
 `
 
