@@ -7,10 +7,18 @@ import CardCarrousel from "../components/CardCarrousel.jsx"
 import ProjectCard from "../components/ProjectCard.jsx"
 import Contact from "../components/Contact.jsx"
 import time_tracker_dashboard from "../assets/images/ttd_ss.png"
+import { Helmet } from "react-helmet"
 
 export default function Home() {
   return (
     <>
+      <Helmet>
+        <title>Ariel Corte</title>
+        <meta
+          name="google-site-verification"
+          content="cStaDLGvdgamHap3eR8rXBx-lwPhfCO5IpSypPJsbYo"
+        />
+      </Helmet>
       <Layout>
         <Wrapper>
           <section id="hero" className="hero">
