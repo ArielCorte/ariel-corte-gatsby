@@ -1,26 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import { StaticImage } from "gatsby-plugin-image"
 import { FaGithub } from "react-icons/fa"
 import { BsFillArrowRightCircleFill } from "react-icons/bs"
 import { IconContext } from "react-icons"
 
-const ProjectCard = ({ title, repo, demo, thumbnail }) => {
+const ProjectCard = ({ title, description, repo, demo, children }) => {
   return (
     <Card>
       <div className="content">
-        <div className="img-wrapper">
-          <StaticImage
-            className="img"
-            src={"../assets/images/ttd_ss.png"}
-            alt="Project Preview"
-          />
-        </div>
+        <div className="img-wrapper">{children}</div>
         <h3 className="title">{title || "Code Project"}</h3>
-        <p>
-          Time tracking dashboard from FrontendMentor challenge. Built with
-          Create React App
-        </p>
+        <p>{description}</p>
       </div>
       <div className="footer">
         {repo ? (

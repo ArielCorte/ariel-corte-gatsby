@@ -8,8 +8,6 @@ const GlobalStyle = createGlobalStyle`
         --background-darker: #18191a;
 
         --highlight-color: #fe6a00;
-
-        --golden-ratio: 1.618;
     }
 
     body{

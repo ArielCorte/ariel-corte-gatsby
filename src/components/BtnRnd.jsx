@@ -16,6 +16,11 @@ const Button = styled.a`
   border: 1px solid var(--primary-dark);
   border-radius: 50%;
   line-height: 0%;
+
+  :hover {
+    border-color: var(${props => props.color || "--highlight-color"});
+    color: var(${props => props.color || "--highlight-color"});
+  }
 `
 
 export default BtnRnd

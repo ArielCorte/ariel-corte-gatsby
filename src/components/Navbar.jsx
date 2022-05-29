@@ -12,9 +12,6 @@ const Navbar = () => {
         </Link>
         <ul>
           <li>
-            <Link to="/about">Tech</Link>
-          </li>
-          <li>
             <a href="#projects">Projects</a>
           </li>
           <li>
@@ -53,6 +50,10 @@ const Wrapper = styled.nav`
   ul li {
     display: inline-block;
     padding: 1rem;
+  }
+
+  a:hover {
+    color: var(--highlight-color);
   }
 `
 

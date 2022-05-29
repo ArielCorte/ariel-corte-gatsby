@@ -7,7 +7,9 @@ import { BsGithub, BsLinkedin } from "react-icons/bs"
 const ContactInfo = () => {
   return (
     <Wrapper>
-      <BtnSqr href="#">Resume</BtnSqr>
+      <BtnSqr href="https://drive.google.com/uc?export=download&id=1bNnzqL9ar-0iTVAfURZMMk8xZmBpbAvU">
+        Resume
+      </BtnSqr>
       <BtnRnd href="https://github.com/ArielCorte" target="_blank">
         <BsGithub />
       </BtnRnd>

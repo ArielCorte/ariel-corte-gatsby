@@ -15,6 +15,11 @@ const Button = styled.a`
   padding: 0.7rem 1.75rem;
   border: 1px solid var(${props => props.color || "--primary-dark"});
   border-radius: 1rem;
+
+  :hover {
+    border-color: var(${props => props.color || "--highlight-color"});
+    color: var(${props => props.color || "--highlight-color"});
+  }
 `
 
 export default BtnSqr

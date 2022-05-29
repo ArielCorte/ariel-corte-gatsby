@@ -14,7 +14,13 @@ const Contact = () => {
   const handleChange = e => {
     if (typeof e.target.value !== "undefined") {
       setLineBreaks(
-        ((e.target.value.match(/\n/g) || []).length + 1) * lineHeight +
+        Math.trunc(
+          (e.target.value.split("\n") || [])
+            .map(line => line.length / 70)
+            .reduce((partialSum, a) => partialSum + a, 0) +
+            (e.target.value.split("\n") || []).length
+        ) *
+          lineHeight +
           paddingHeight * 2 +
           borderWidth * 2
       )
@@ -96,6 +102,7 @@ const EmailForm = styled.div`
     height: ${props => props.lineBreaks.toString()}rem;
     max-height: ${props => props.maxHeight.toString()}rem;
     line-height: 1rem;
+    overflow: hidden;
   }
 
   input:focus,

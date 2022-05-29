@@ -4,7 +4,9 @@ import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import ContactInfo from "../components/ContactInfo.jsx"
 import CardCarrousel from "../components/CardCarrousel.jsx"
+import ProjectCard from "../components/ProjectCard.jsx"
 import Contact from "../components/Contact.jsx"
+import time_tracker_dashboard from "../assets/images/ttd_ss.png"
 
 export default function Home() {
   return (
@@ -15,7 +17,7 @@ export default function Home() {
             <div className="hero-flex">
               <div className="hero-content">
                 <p>Hi my name is</p>
-                <h1>Ariel Corte.</h1>
+                <h1>Ariel Corte</h1>
                 <h2 className="subtitle">I build things for the web</h2>
                 <p className="description">
                   A passionate web app developer. I tend to make use of modern
@@ -34,11 +36,56 @@ export default function Home() {
           </section>
           <section id="projects">
             <h2 className="section-title">Projects</h2>
-            <CardCarrousel />
+            <CardCarrousel>
+              <ProjectCard
+                title="Amiibo store"
+                description="E-commerce mockup built with Create React App, React Router, Redux and amiibo api."
+                repo="https://github.com/ArielCorte/arielcorte-amiibo"
+                demo="https://arielcorte-amiibo.vercel.app"
+                thumbnail={time_tracker_dashboard}
+              >
+                <StaticImage
+                  className="pc-img"
+                  src={"../assets/images/as_ss.png"}
+                  alt="Project Preview"
+                />
+              </ProjectCard>
+              <ProjectCard
+                title="Time tracker dashboard"
+                description="Time tracking dashboard from FrontendMentor challenge. Built with Create React App"
+                repo="https://github.com/ArielCorte/time-tracking-dashboard-FM"
+                demo="https://arielcorte-time-tracking-dashboard-fm.vercel.app"
+              >
+                <StaticImage
+                  className="img"
+                  src={"../assets/images/ttd_ss.png"}
+                  alt="Project Preview"
+                />
+              </ProjectCard>
+              <ProjectCard
+                title="Flashcard quiz"
+                description="A flashcard quiz built with Create React App and Open Trivia Database API."
+                repo="https://github.com/ArielCorte/flashcard-quiz"
+                demo="https://arielcorte-flashcard-quiz.vercel.app"
+                thumbnail={time_tracker_dashboard}
+              >
+                <StaticImage
+                  className="img"
+                  src={"../assets/images/fcq_ss.png"}
+                  alt="Project Preview"
+                />
+              </ProjectCard>
+            </CardCarrousel>
           </section>
           <section id="contact">
             <h2 className="section-title">Contact Me</h2>
-            <Contact />
+            <div className="contact-container">
+              <Contact />
+              <div className="other-contact">
+                <h3>You can also contact me by</h3>
+                <ContactInfo />
+              </div>
+            </div>
           </section>
         </Wrapper>
       </Layout>
@@ -82,5 +129,19 @@ const Wrapper = styled.main`
 
   .section-title {
     text-align: center;
+  }
+
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .other-contact {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 `
