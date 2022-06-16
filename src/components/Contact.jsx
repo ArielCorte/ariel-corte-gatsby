@@ -74,7 +74,7 @@ const Contact = () => {
 }
 
 const EmailForm = styled.div`
-  width: 30rem;
+  width: 100%;
 
   .emailform {
     display: flex;

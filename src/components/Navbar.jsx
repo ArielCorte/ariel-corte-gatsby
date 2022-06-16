@@ -11,10 +11,10 @@ const Navbar = () => {
           Ariel Corte
         </Link>
         <ul>
-          <li>
+          <li className="navLink">
             <a href="#projects">Projects</a>
           </li>
-          <li>
+          <li className="cta">
             <BtnSqr href="#contact" color="--highlight-color">
               Contact Me
             </BtnSqr>
@@ -54,6 +54,18 @@ const Wrapper = styled.nav`
 
   a:hover {
     color: var(--highlight-color);
+  }
+
+  @media screen and (max-width: 460px) {
+    .navLink {
+      display: none;
+    }
+
+    .cta {
+      display: inline;
+      font-size: 0.8rem;
+      padding: 0;
+    }
   }
 `
 

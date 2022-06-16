@@ -22,18 +22,16 @@ export default function Home() {
       <Layout>
         <Wrapper>
           <section id="hero" className="hero">
-            <div className="hero-flex">
-              <div className="hero-content">
-                <p>Hi my name is</p>
-                <h1>Ariel Corte</h1>
-                <h2 className="subtitle">I build things for the web</h2>
-                <p className="description">
-                  A passionate web app developer. I tend to make use of modern
-                  web technologies to build websites that looks great, feels
-                  fantastic, and functions correctly.
-                </p>
-                <ContactInfo />
-              </div>
+            <div className="hero-grid">
+              <p>Hi my name is</p>
+              <h1>Ariel Corte</h1>
+              <h2 className="subtitle">I build things for the web</h2>
+              <p className="description">
+                A passionate web app developer. I tend to make use of modern web
+                technologies to build websites that looks great, feels
+                fantastic, and functions correctly.
+              </p>
+              <ContactInfo />
               <div className="hero-img">
                 <StaticImage
                   src="../assets/images/foto-perfil-ariel.jpg"
@@ -88,7 +86,9 @@ export default function Home() {
           <section id="contact">
             <h2 className="section-title">Contact Me</h2>
             <div className="contact-container">
-              <Contact />
+              <div className="email-form-container">
+                <Contact />
+              </div>
               <div className="other-contact">
                 <h3>You can also contact me by</h3>
                 <ContactInfo />
@@ -106,19 +106,19 @@ const Wrapper = styled.main`
     padding: 4rem 0;
   }
 
-  .hero-flex {
+  .hero-grid {
     margin: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    grid-template-rows: repeat(5, fit-content);
     align-items: center;
     justify-content: space-evenly;
+    column-gap: 1rem;
+    padding: 0 2.5rem;
   }
 
   .subtitle {
     color: var(--secondary-dark);
-  }
-
-  .hero-content {
-    width: 60%;
   }
 
   .description {
@@ -126,9 +126,12 @@ const Wrapper = styled.main`
   }
 
   .hero-img {
-    width: 28%;
     border-radius: 1rem;
     overflow: hidden;
+    grid-row: 1 / span 5;
+    grid-column-start: 2;
+    align-self: center;
+    justify-self: center;
   }
 
   .hero-img img {
@@ -143,13 +146,56 @@ const Wrapper = styled.main`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
+  }
+
+  .email-form-container {
+    width: 50%;
   }
 
   .other-contact {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    flex-grow: 1;
+  }
+
+  @media screen and (max-width: 460px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .hero h1 {
+      line-height: 4rem;
+      margin-top: 0.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .hero-img {
+      grid-row: 3 / span 1;
+      grid-column-start: 1;
+      align-self: center;
+      justify-self: center;
+      width: 80%;
+    }
+
+    .subtitle {
+      font-size: 2rem;
+    }
+
+    .contact-container {
+      flex-direction: column;
+    }
+
+    .email-form-container {
+      width: 90%;
+    }
+
+    .other-contact h3 {
+      font-size: 1rem;
+    }
   }
 `
