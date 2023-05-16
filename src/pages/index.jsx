@@ -6,7 +6,6 @@ import ContactInfo from "../components/ContactInfo.jsx"
 import CardCarrousel from "../components/CardCarrousel.jsx"
 import ProjectCard from "../components/ProjectCard.jsx"
 import Contact from "../components/Contact.jsx"
-import time_tracker_dashboard from "../assets/images/ttd_ss.png"
 import { Helmet } from "react-helmet"
 
 export default function Home() {
@@ -43,12 +42,23 @@ export default function Home() {
           <section id="projects">
             <h2 className="section-title">Projects</h2>
             <CardCarrousel>
+            <ProjectCard
+                title="Copyboard"
+                description="Copyboard gives you a clipboard that you can access from any browser, from any device. Built with Next.js, React, Typescript, Tailwindcss, tRPC and Prisma with PlanetScale"
+                repo="https://github.com/ArielCorte/copyboard"
+                demo="https://copyboard-arielcorte.vercel.app"
+            >
+                <StaticImage
+                    className="pc-img"
+                    src={"../assets/images/cb_ss.png"}
+                    alt="Project Preview"
+                />
+            </ProjectCard>
               <ProjectCard
                 title="Amiibo store"
                 description="E-commerce mockup built with Create React App, React Router, Redux and amiibo api."
                 repo="https://github.com/ArielCorte/arielcorte-amiibo"
-                demo="https://arielcorte-amiibo.vercel.app"
-                thumbnail={time_tracker_dashboard}
+                demo="https://amiibo-arielcorte.vercel.app"
               >
                 <StaticImage
                   className="pc-img"
@@ -56,6 +66,18 @@ export default function Home() {
                   alt="Project Preview"
                 />
               </ProjectCard>
+            <ProjectCard
+                title="Token trade"
+                description="Token trade is a mockup of a cryptocurrency exchange built with Vite, React and TailwindCSS."
+                repo="https://github.com/ArielCorte/token-trade"
+                demo="https://token-trade-arielcorte.vercel.app"
+            >
+                <StaticImage
+                    className="pc-img"
+                    src={"../assets/images/tt_ss.png"}
+                    alt="Project Preview"
+                />
+            </ProjectCard>
               <ProjectCard
                 title="Time tracker dashboard"
                 description="Time tracking dashboard from FrontendMentor challenge. Built with Create React App"
@@ -73,7 +95,6 @@ export default function Home() {
                 description="A flashcard quiz built with Create React App and Open Trivia Database API."
                 repo="https://github.com/ArielCorte/flashcard-quiz"
                 demo="https://arielcorte-flashcard-quiz.vercel.app"
-                thumbnail={time_tracker_dashboard}
               >
                 <StaticImage
                   className="img"
